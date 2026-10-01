@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Optimal Solution
 //Time complexituy - O(n1+n2)
 //Space complexity - O(1)
 class Solution {

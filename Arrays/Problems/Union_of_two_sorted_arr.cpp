@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//Burte fore solution
+//Burte force solution
+//Time complexity - O(n1 + n2)
+//Space complexity - O(n1 + n2)
 #include<bits/stdc++.h>
 class Solution {
 public:
