@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Time complexituy - O(n1+n2)
+//Space complexity - O(1)
 class Solution {
 public:
     vector<int> intersectionArray(vector<int>& nums1, vector<int>& nums2) {
