@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Time Complexity-O(n) + O(n logn)
+//Space Complexity - O(n)
 #include <algorithm>
 class Solution {
 public:
