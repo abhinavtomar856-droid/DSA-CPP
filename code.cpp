@@ -6,5 +6,6 @@ int main() {
     int mini = *min_element(a,a+5);
 
     cout << "Minium element is: " << mini << endl;
+    cout << "Hello World" << endl;
     return 0;
 }
