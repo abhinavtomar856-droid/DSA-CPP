@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 //Brute Force solution
 //Time complexity exceed
 class Solution {
