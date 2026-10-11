@@ -14,5 +14,6 @@ int main() {
     cout << "Pardeep narwal" << endl;
     cout << " Virat kohli" << endl;
     cout << "Ab de villers" << endl;
+    cout << "Chris Gayle" << endl;
     return 0;
 }
