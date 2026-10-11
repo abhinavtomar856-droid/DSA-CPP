@@ -8,7 +8,6 @@ int main() {
 
     cout << "Minium element is: " << mini << endl;
     cout << "Maxium element is: " << max << endl;
-    cout << "Hello World" << endl;
     cout << "Hello Abhinav" << endl;
     cout << "Rahul chaudhary" << endl;
     cout << "Pardeep narwal" << endl;
