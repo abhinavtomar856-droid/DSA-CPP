@@ -16,6 +16,5 @@ int main() {
     cout << "Rohit Sharma" << endl;
     cout << "Sachin Tendulkar" << endl;
     cout << "Rahul Dravid" << endl;
-    cout << "Vivas Laxman" << endl;
     return 0;
 }
