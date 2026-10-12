@@ -9,11 +9,9 @@ int main() {
     cout << "Minium element is: " << mini << endl;
     cout << "Maxium element is: " << max << endl;
     cout << "Abhinav Tomar" << endl;
-    cout << "Rahul chaudhary" << endl;
     cout << " Virat kohli" << endl;
     cout << "Ab de villers" << endl;
     cout << "Rohit Sharma" << endl;
     cout << "Sachin Tendulkar" << endl;
-    cout << "Rahul Dravid" << endl;
     return 0;
 }
