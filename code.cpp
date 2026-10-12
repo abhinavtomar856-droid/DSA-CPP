@@ -13,5 +13,7 @@ int main() {
     cout << "Ab de villers" << endl;
     cout << "Rohit Sharma" << endl;
     cout << "Sachin Tendulkar" << endl;
+    cout << "Chris Gayle" << endl;
+    
     return 0;
 }
