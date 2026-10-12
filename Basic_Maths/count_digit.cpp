@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//First solution
 class Solution {
 public:
     int countDigit(int n) {
@@ -15,6 +16,16 @@ public:
         }
         return count;
     }
+};
+
+//Second Solution
+#include<bits/stdc++.h>
+class Solution {
+public:
+    int countDigit(int n) {
+        int count = (int)(log10(n) + 1);
+        return count;
+    };
 };
 
 int main() {
