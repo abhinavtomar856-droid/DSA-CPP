@@ -6,6 +6,13 @@ int main() {
     int mini = *min_element(a,a+5);
     int max = *max_element(a,a+5);
 
+    vector<int> vec = {45,5,23,1,78};
+    sort(vec.begin(),vec.end()+1);
+
+    for(int i = 0;i<vec.size();i++){
+        cout << vec[i] << endl;
+    };
+
     cout << "Minium element is: " << mini << endl;
     cout << "Maxium element is: " << max << endl;
     cout << "Abhinav Tomar" << endl;
