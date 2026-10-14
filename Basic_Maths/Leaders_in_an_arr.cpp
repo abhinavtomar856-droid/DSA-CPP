@@ -5,7 +5,6 @@ using namespace std;
 //T.L = O(n) + O(n) = 0(2n) = O(n)
 //S.L = 0(n) in worst case and in order to return not solving the problem
 
-
 class Solution {
 public:
     vector<int> leaders(vector<int>& nums) {
