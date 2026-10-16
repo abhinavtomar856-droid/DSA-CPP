@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 //First solution
 #include<bits/stdc++.h>
 class Solution {
