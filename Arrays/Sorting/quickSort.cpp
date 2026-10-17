@@ -41,5 +41,6 @@ int main() {
     for(int val : nums){
         cout << val << endl;
     }
+    
     return 0;
 }
