@@ -23,7 +23,7 @@ int main() {
     cout << "Sachin Tendulkar" << endl;
     cout << "Chris Gayle" << endl;
     cout << "Hello world" << endl;
-
+    cout << "Hello wordl 2" << endl;
     int num = -321;
     while(num < 0){
         int last_dig = num%10;
