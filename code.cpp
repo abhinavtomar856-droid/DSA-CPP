@@ -16,7 +16,6 @@ int main() {
     cout << "Minium element is: " << mini << endl;
     cout << "Maxium element is: " << max << endl;
     cout << "Abhinav Tomar" << endl;
-    cout << "Name of the cricketrs" << endl;
     cout << "Virat kohli" << endl;
     cout << "Ab de villers" << endl;
     cout << "Rohit Sharma" << endl;
