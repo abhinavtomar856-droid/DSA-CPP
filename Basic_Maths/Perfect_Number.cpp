@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Perfect Number
 class Solution {
 public:
     bool isPerfect(int n) {
