@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//only for postive numbers and zero but an optimal solution
+//only for postive numbers and zero but an optimal solution.
+//Sliding Window or 2 pointer solution.
 class Solution{
 public:
     int longestSubarray(vector<int> &nums, int k){
@@ -27,7 +28,8 @@ public:
     };
 };
 
-//better solution but works for every case if arr has postive negative zero elements
+//better solution but works in every case if arr has postive,negative and zero elements.
+//Prefix Sum.
 class Solution{
 public:
     int longestSubarray(vector<int> &nums, int k){
