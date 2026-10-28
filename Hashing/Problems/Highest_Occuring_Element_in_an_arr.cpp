@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include<bits/stdc++.h>
 class Solution {
 public:
     int mostFrequentElement(vector<int>& nums) {
