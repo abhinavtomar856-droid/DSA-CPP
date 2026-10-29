@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Brute Force appoarch using linear search.
 class Solution{
 public:
     int upperBound(vector<int> &nums, int x){
