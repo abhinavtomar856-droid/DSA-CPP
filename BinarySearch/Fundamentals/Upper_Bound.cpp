@@ -38,6 +38,9 @@ public:
 };
 
 int main() {
-    
+    //Upper bound is also found using built in method
+    vector<int> vec = {1,2,2,3};
+    int ub = upper_bound(vec.begin(),vec.end(),2) - vec.begin();
+    cout << "index is" << ub << endl;
     return 0;
 }

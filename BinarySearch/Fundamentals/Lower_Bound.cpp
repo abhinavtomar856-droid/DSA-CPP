@@ -38,7 +38,7 @@ public:
 };
 
 int main() {
-    //Lower bound is also found using built in method
+    //Lower bound is also found using built in method.
     vector<int> vec = {3,5,8,15,19};
     int lb = lower_bound(vec.begin(),vec.end(),9) - vec.begin();
     cout << "index is:" << lb << endl;
