@@ -8,23 +8,15 @@ public:
        int n = nums.size();
        int left = 0;
        int right = n-1;
-       int ans = 0;
+       int ans = n;
        while(left<=right){
             int mid = left + (right - left)/2;
             if(nums[mid] >= x){
+                ans = mid;
                 right = mid - 1;
-                if(right>mid){
-                    ans = right;
-                }
-            }
-            else if(nums[mid] < x){
-                left = mid + 1;
-                if(left > ans){
-                    ans = left;
-                }
             }
             else{
-                return mid;
+                left = mid + 1;
             }
        }
        return ans;
