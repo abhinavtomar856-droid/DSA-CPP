@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Time complexity = O(log N*M)
+//Space complexity = O(1)
 class Solution{
 public:
     bool searchMatrix(vector<vector<int>> &mat, int target){
