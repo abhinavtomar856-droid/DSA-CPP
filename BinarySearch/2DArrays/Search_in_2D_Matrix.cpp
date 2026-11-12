@@ -7,8 +7,8 @@ using namespace std;
 class Solution{
 public:
     bool searchMatrix(vector<vector<int>> &mat, int target){
-        int n = mat.size();
-        int m = mat[0].size();
+        int n = mat.size();//No of rows
+        int m = mat[0].size();//No of columns
         int low = 0;
         int high = (n*m)-1;
 
