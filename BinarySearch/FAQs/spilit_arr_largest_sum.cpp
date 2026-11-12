@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 //Time complexity = O(logN) + O(N)
 //Space complexity = O(1).
 int noOfSubarrs(vector<int> &a,int sum){
