@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-//Time complexity = O(log N*M)
+//Time complexity = O(log (N*M))
 //Space complexity = O(1)
 
 class Solution{
