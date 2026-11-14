@@ -2,7 +2,7 @@
 using namespace std;
 
 //Optimal Solution
-//TIme complexity = O(log 10^9) * O(n * log2m).
+//TIme complexity = O(log 10^9 * n * log2m).
 //Space complexity = O(1).
 
 int upperBound(vector<int> &nums, int n,int x){
