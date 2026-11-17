@@ -1,5 +1,5 @@
 //What is recursion.
-//When function repeatdly calls itself under the base condition met.
+//When function repeatdly calls itself until the specify condition met.
 
 #include <bits/stdc++.h>
 using namespace std;
