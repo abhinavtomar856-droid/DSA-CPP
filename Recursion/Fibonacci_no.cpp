@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Time complexity = O(2^n)
+//Space complexity = O(1)
+
 class Solution {
 public:
     int fib(int n) {

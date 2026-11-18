@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//Time complexity = O(log10 N)
+//Space complexity = O(1)
+
 class Solution{
 public:
 	int addDigits(int num){
