@@ -51,6 +51,9 @@ public:
 
     void pop_front(){
         Node* temp = head;
+        if(head == NULL){
+            cout << "Doubly linked list is empty" << endl;
+        }
         head = head->next;
         if(head != NULL){
             head->prev = NULL;
