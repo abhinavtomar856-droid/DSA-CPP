@@ -62,6 +62,22 @@ public:
         delete temp;
     }
 
+    void pop_back(){
+        Node* temp = tail;
+        if(head == NULL){
+            cout << "Linked list is empty" << endl;
+            return;
+        }
+        else{
+            tail = tail->prev;
+            if(temp!=NULL){
+                tail->next = NULL;
+            }
+            temp->prev = NULL;
+        }
+        delete temp;
+    }
+
     void print(){
         Node* temp = head;
         while(temp!=NULL){
@@ -79,7 +95,7 @@ int main() {
     ll.push_front(3);
     ll.push_front(4);
     ll.print();
-    ll.pop_front();
+    ll.pop_back();
     ll.print();
 
     return 0;
