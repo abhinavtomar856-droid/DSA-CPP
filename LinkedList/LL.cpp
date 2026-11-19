@@ -94,20 +94,23 @@ public:
         temp->next = newNode;
     }
 
-    void search(int val){
+    int search(int val){
         if(head == NULL){
             cout << "Empty Linked List" << endl;
         }
 
         Node* temp = head;
+        int index = 0;
         while(temp != tail){
             if(temp->data == val){
                 cout << "Value Present in the linked list" << endl;
-                return;
+                return index;;
             }
             temp = temp->next;
+            index++;
         }
         cout << "Value not present in the linked list" << endl;
+        return -1;
     }
 
     void printLL(){
@@ -126,7 +129,7 @@ int main() {
     LL.push_back(2);
     LL.push_back(3);
     LL.push_back(4);
-    LL.search(6);
+    cout << LL.search(6) << endl;
 
     return 0;
 }
