@@ -63,6 +63,28 @@ public:
         delete temp;
     }
 
+    void deleteAtTail(){
+        if(head == NULL){
+            cout << "Circular Linked List is empty" << endl;
+            return;
+        }
+        if(head == tail){
+            delete head;
+            head = tail = NULL;
+            return;
+        }
+        
+        Node* prev = head;
+        Node* temp = tail;
+        while(prev->next != tail){
+            prev = prev->next;
+        }
+        tail = prev;
+        tail->next = head;
+        temp->next = NULL;
+        delete temp;
+    }
+
     void print(){
         if(head == NULL){
             cout << "Empty Circular Linked List" << endl;
@@ -89,7 +111,7 @@ int main() {
     cll.insertAtTail(3);
     cll.insertAtTail(4);
     cll.print(); 
-    cll.deleteAtHead();
+    cll.deleteAtTail();
     cll.print();
     return 0;
 }
