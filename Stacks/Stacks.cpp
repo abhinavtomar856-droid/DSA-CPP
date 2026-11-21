@@ -49,8 +49,7 @@ class Stack{
     list<int> ll;
 public:
     void push(int val){
-        ll.push_front(val);
-
+        ll.push_front()
     }
     void pop(){
        ll.pop_front();
