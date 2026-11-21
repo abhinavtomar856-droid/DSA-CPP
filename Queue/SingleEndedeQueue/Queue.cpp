@@ -1,6 +1,71 @@
 #include<iostream>
 using namespace std;
 
+// Implement a queue using an array.
+class Queue{
+    int* arr;
+    int capacity;
+    int currSize;
+    int f;
+    int r;
+
+public:
+    Queue(int size){
+        capacity = size;
+        arr = new int[capacity];
+        currSize = 0;
+        f = 0;
+        r = -1;
+    }
+
+    void push(int val){
+        if(r == capacity - 1){
+            cout << "Queue is Full" << endl;
+            return;
+        }
+        arr[r++] = val;
+        currSize++;
+    }
+
+    void pop(){
+        if(empty()){
+            cout << "Queue is Empty" << endl;
+            return;
+        }
+        f++;
+        currSize--;
+    }
+
+    int front(){
+        if(empty()){
+            cout << "Queue is Empty" << endl;
+            return -1;
+        }
+        return arr[f];
+    }
+
+    bool empty(){
+        return currSize == 0;
+    }
+};
+
+int main(){
+    Queue q(5);
+    q.push(10);
+    q.push(20);
+    q.push(30);
+
+    cout << q.front() << endl;   // 10
+    q.pop();
+    cout << q.front() << endl;   // 20
+
+    return 0;
+}
+
+// //Impelement a Queue using a Linked List from Scarch(without STL).
+#include<iostream>
+using namespace std;
+
 class Node{
 public:
     int data;
@@ -12,7 +77,7 @@ public:
     }
 };
 
-//Impelement a Queue using a Linked List from Scarch(without STL).
+
 class Queue{
     Node* head;
     Node* tail;
