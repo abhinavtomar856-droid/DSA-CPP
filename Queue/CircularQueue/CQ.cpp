@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+//Implementation of Circular Queue.
 class CircularQueue{
     int* arr;
     int currSize;
