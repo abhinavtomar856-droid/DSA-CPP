@@ -64,6 +64,5 @@ int main(){
         cq.pop();
     }
     cout << endl;
-
     return 0;
 };
