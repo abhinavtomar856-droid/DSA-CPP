@@ -54,10 +54,28 @@ void inOrder(Node* root){
     inOrder(root->right);
 };
 
+void postOrder(Node* root){
+    if(root == NULL){
+        return;
+    }
+    postOrder(root->left);
+    postOrder(root->right);
+    cout << root->data << " ";
+};
+
+
 int main(){
     vector<int> preorderSequence = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
     Node* root = buildTree(preorderSequence);
-    // preOrder(root);
+    cout << "Traverse in the Binary Tree using preorder Travesal" << endl;
+    preOrder(root);
+    cout << endl;
+
+    cout << "Traverse in the Binary Tree using inorder Travesal" << endl;
     inOrder(root);
+    cout << endl;
+    
+    cout << "Traverse in the Binary Tree using postorder Travesal" << endl;
+    postOrder(root);
     return 0;
 }
