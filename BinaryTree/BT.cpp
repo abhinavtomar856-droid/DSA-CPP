@@ -65,6 +65,9 @@ void postOrder(Node* root){
     cout << root->data << " ";
 };
 
+//LevelOrder Traversal
+//Time complexity = O(N).
+//Space complexity = O(1).
 void levelOrder(Node* root){
     queue<Node*> q;
     q.push(root);
