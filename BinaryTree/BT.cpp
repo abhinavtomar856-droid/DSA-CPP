@@ -13,7 +13,7 @@ public:
     }
 };
 
-static int index = -1;
+int index = -1;
 Node* buildTree(vector<int> preorderSequence){
     index++;
     if(preorderSequence[index] == -1){
