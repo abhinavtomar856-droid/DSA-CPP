@@ -54,6 +54,9 @@ void inOrder(Node* root){
     inOrder(root->right);
 };
 
+//postOrder Traversal
+//Time complexity = O(N).
+//Space complexity = O(1).
 void postOrder(Node* root){
     if(root == NULL){
         return;
@@ -74,7 +77,7 @@ int main(){
     cout << "Traverse in the Binary Tree using inorder Travesal" << endl;
     inOrder(root);
     cout << endl;
-    
+
     cout << "Traverse in the Binary Tree using postorder Travesal" << endl;
     postOrder(root);
     return 0;
