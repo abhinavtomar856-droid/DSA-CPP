@@ -13,6 +13,9 @@ public:
     }
 };
 
+
+//Time complexity = O(N)
+//Space complexity = O(1)
 int index = -1;
 Node* buildTree(vector<int> preorderSequence){
     index++;
@@ -26,9 +29,35 @@ Node* buildTree(vector<int> preorderSequence){
     return root;
 };
 
+
+//PreOrder Traversal
+//Time complexity = O(N).
+//Space complexity = O(1).
+void preOrder(Node* root){
+    if(root == NULL){
+        return;
+    }
+    cout << root->data << " ";
+    preOrder(root->left);
+    preOrder(root->right);
+}
+
+//inOrder Traversal
+//Time complexity = O(N).
+//Space complexity = O(1).
+void inOrder(Node* root){
+    if(root == NULL){
+        return;
+    }
+    inOrder(root->left);
+    cout << root->data << " ";
+    inOrder(root->right);
+};
+
 int main(){
     vector<int> preorderSequence = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
     Node* root = buildTree(preorderSequence);
-    cout << root->data << endl;
+    // preOrder(root);
+    inOrder(root);
     return 0;
 }
