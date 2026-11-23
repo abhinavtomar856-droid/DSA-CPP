@@ -13,7 +13,6 @@ public:
     }
 };
 
-
 //Time complexity = O(N)
 //Space complexity = O(1)
 int index = -1;
@@ -66,6 +65,35 @@ void postOrder(Node* root){
     cout << root->data << " ";
 };
 
+void levelOrder(Node* root){
+    queue<Node*> q;
+    q.push(root);
+    q.push(NULL);
+
+    while(q.size() > 0){
+        Node* curr = q.front();
+        q.pop();
+
+        if(curr == NULL){
+            if(!q.empty()){
+                cout << endl;
+                q.push(NULL);
+                continue;
+            }else{
+                break;
+            }
+        }
+
+        cout << curr->data << " ";
+        if(curr->left != NULL){
+            q.push(curr->left);
+        }
+
+        if(curr->right != NULL){
+            q.push(curr->right);
+        }
+    }
+};
 
 int main(){
     vector<int> preorderSequence = {1,2,-1,-1,3,4,-1,-1,5,-1,-1};
@@ -80,5 +108,9 @@ int main(){
 
     cout << "Traverse in the Binary Tree using postorder Travesal" << endl;
     postOrder(root);
+    cout << endl;
+
+    cout << "Traverse in the Binary Tree using Levelorder Travesal" << endl;
+    levelOrder(root);
     return 0;
 }
