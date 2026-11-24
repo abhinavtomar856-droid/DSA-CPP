@@ -92,6 +92,7 @@ public:
         size = 0;
     }
 
+    //Time complexity = O(log N)
     void insert(int val) {
         size = size + 1;
         int index = size;
@@ -108,6 +109,7 @@ public:
         }
     }
 
+    //Time complexity = O(log N)
     void deleteFromHeap() {
         if (size == 0) {
             cout << "Heap is Empty" << endl;
