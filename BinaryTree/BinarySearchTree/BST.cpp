@@ -44,7 +44,7 @@ void inorder(Node* root){
 
 //Time complexity = O(Log N) (Balanced BST Case)/ Average Case
 //Best Case = O(1)
-//Worst Case ma = O(N) Skewed Binary Tree
+//Worst Case ma = O(N) Skewed Binary Tree.
 bool search(Node* root,int val){
     if(root == NULL){
         return false;
