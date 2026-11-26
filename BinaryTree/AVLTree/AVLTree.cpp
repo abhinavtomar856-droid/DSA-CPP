@@ -114,6 +114,52 @@ bool search(Node* root,int val){
     }
 }
 
+Node* getInOrderSuccessor(Node* root){
+    while(root->left != NULL && root != NULL){
+        root = root->left;
+    }
+    return root;
+}
+
+Node* deleteNode(Node* root,int val){
+    if(root == NULL){
+        return;
+    }
+
+    //Searching for a delete Node.
+    if(val < root->data){
+        root->left = deleteNode(root->left,val);
+    }else if(val > root->data){
+        root->right = deleteNode(root->right,val);
+    }else{
+        //Leaf Node.
+        if(root->left == NULL && root->right == NULL){
+            delete root;
+            return root;
+        }
+        //Single Child case.
+        else if(root->left == NULL && root->right != NULL){
+            Node* temp = root->right;
+            delete root;
+            return temp;
+        }
+        else if(root->left != NULL && root->right == NULL){
+            Node* temp = root->left;
+            delete root;
+            return temp;
+        }
+        //Node has 2 children.
+        else{
+            Node* IS = getInOrderSuccessor(root->right);
+            root->data = IS->data;
+            root->right = delNode(root->right,IS->data);
+        }
+    }
+}
+
+//Update Height
+root->height = 1 + max(getheight(root->left),getheight(root->right));
+
 void inOrderTraversal(Node* root){
     if(root == NULL){
         return;
