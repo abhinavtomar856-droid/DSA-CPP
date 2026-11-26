@@ -121,9 +121,10 @@ Node* getInOrderSuccessor(Node* root){
     return root;
 }
 
+//Time complexity = O(LogN)
 Node* deleteNode(Node* root,int val){
     if(root == NULL){
-        return;
+        return NULL;
     }
 
     //Searching for a delete Node.
@@ -135,7 +136,7 @@ Node* deleteNode(Node* root,int val){
         //Leaf Node.
         if(root->left == NULL && root->right == NULL){
             delete root;
-            return root;
+            return NULL;
         }
         //Single Child case.
         else if(root->left == NULL && root->right != NULL){
@@ -152,13 +153,39 @@ Node* deleteNode(Node* root,int val){
         else{
             Node* IS = getInOrderSuccessor(root->right);
             root->data = IS->data;
-            root->right = delNode(root->right,IS->data);
+            root->right = deleteNode(root->right,IS->data);
         }
     }
-}
+    
+    //Update Height
+    root->height = 1 + max(getheight(root->left),getheight(root->right));
+    int bf = getBalance(root);
 
-//Update Height
-root->height = 1 + max(getheight(root->left),getheight(root->right));
+    if(bf > 1){
+        //Left Left Rotation Case
+        if(getBalance(root->left) >=0){
+            return rightRotation(root);
+        }
+        //Left Right Rotation Case
+        else{
+            root->left = leftRotation(root->left);
+            return rightRotation(root);
+        }
+    }
+    if(bf <-1){
+        //Right Rotation Case.
+        if(getBalance(root->right) >= 0){
+            return leftRotation(root);
+        }
+        //Right Left Rotation Case
+        else{
+            root->right = rightRotation(root->right);
+            return leftRotation(root->left);
+        }
+    }
+    return root;
+};
+
 
 void inOrderTraversal(Node* root){
     if(root == NULL){
@@ -182,6 +209,12 @@ int main() {
     root = insert(root,95);
 
     // inOrderTraversal(root);
-    cout << search(root,95) << endl;
+    // cout << search(root,95) << endl;
+
+    cout << "Before\n";
+    inOrderTraversal(root);
+    root = deleteNode(root,30);
+    cout << "After\n";
+    inOrderTraversal(root);
     return 0;
 }
