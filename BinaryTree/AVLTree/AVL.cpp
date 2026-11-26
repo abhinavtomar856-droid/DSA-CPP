@@ -2,6 +2,7 @@
 using namespace std;
 
 class Node{
+    public:
     int data;
     int height;
     Node* left;
@@ -12,31 +13,114 @@ class Node{
         height = 1;
         left = right = NULL;
     }
-}
+};
 
-int height(Node* root){
+int getheight(Node* root){
     if(root == NULL){
-        return 0
+        return 0;
     }
     return root->height;
-}
+};
 
+int getBalance(Node* root){
+    return getheight(root->left) - getheight(root->right);
+};
+
+Node* rightRotation(Node* root){
+    Node* child = root->left;
+    Node* childRight = child->right;
+    child->right = root;
+    root->left = childRight;
+
+    //Update height of child and root or parent node.
+    root->height = 1 + max(getheight(root->left),getheight(root->right));
+    child->height = 1 + max(getheight(child->left),getheight(child->right));
+
+    return child;
+};
+
+Node* leftRotation(Node* root){
+    Node* child = root->right;
+    Node* childleft = child->left;
+    child->left = root;
+    root->right = childleft;
+
+    //Update height of child and root or parent node.
+    root->height = 1 + max(getheight(root->left),getheight(root->right));
+    child->height = 1 + max(getheight(child->left),getheight(child->right));
+
+    return child;
+};
+
+//Time Complexity = O(log N)
 Node* insert(Node* root,int val){
-    
+
     if(root == NULL){
         return new Node(val);
     }
 
     if(val < root->data){
         root->left = insert(root->left,val);
-    }else if{
+    }else if(val > root->data){
         root->right = insert(root->right,val);
     }else{
         return root;
     }
 
     //Update height of a AVL tree.
-    root->height = 1 + max((getHeight(root->left) + getHeight(root->right)));
+    root->height = 1 + max(getheight(root->left) , getheight(root->right));
+
+    //Balancing
+    int bf = getBalance(root);
+
+    //Left Left Rotation case.
+    if(bf > 1 && val < root->left->data){
+        return rightRotation(root);
+    }
+    //Left Right rotation case.
+    else if(bf > 1 && val> root->left->data){
+        root->left = leftRotation(root->left);
+        return rightRotation(root);
+    }
+    //Right Left rotation case.
+    else if(bf <-1 && val < root->right->data){
+        root->right = rightRotation(root->right);
+        return leftRotation(root);
+    }
+    //Right Right rotation case.
+    else if(bf <-1 && val>root->right->data){
+        return leftRotation(root);
+    }
+    else{
+        return root;
+    }
+
+};
+
+bool search(Node* root,int val){
+    if(root == NULL){
+        return false;
+    }
+
+    if(root->data == val){
+        return true;
+    }
+
+    if(val < root->data){
+        return search(root->left,val);
+    }else{
+        return search(root->right,val);
+    }
+}
+
+void inOrderTraversal(Node* root){
+    if(root == NULL){
+        return;
+    }
+
+    inOrderTraversal(root->left);
+    cout << root->data << endl;
+    inOrderTraversal(root->right);
 }
 
 int main() {
@@ -49,5 +133,8 @@ int main() {
     root = insert(root,5);
     root = insert(root,100);
     root = insert(root,95);
+
+    // inOrderTraversal(root);
+    cout << search(root,95) << endl;
     return 0;
 }
