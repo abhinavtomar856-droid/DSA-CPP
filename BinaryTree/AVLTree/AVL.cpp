@@ -97,6 +97,7 @@ Node* insert(Node* root,int val){
 
 };
 
+//Time Complexity = O(log N)
 bool search(Node* root,int val){
     if(root == NULL){
         return false;
