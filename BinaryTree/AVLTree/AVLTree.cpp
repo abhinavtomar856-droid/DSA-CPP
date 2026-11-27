@@ -208,8 +208,8 @@ int main() {
     root = insert(root,100);
     root = insert(root,95);
 
-    // inOrderTraversal(root);
-    // cout << search(root,95) << endl;
+    inOrderTraversal(root);
+    cout << search(root,95) << endl;
 
     cout << "Before\n";
     inOrderTraversal(root);
